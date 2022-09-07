@@ -11,7 +11,7 @@
   --color-grey-dark-3: #999;
   --shadow-dark: 0 2rem 6rem rgba($color: #000000, $alpha: 0.3);
   --shadow-light: 0 2rem 5rem rgba($color: #000000, $alpha: 0.06);
-  --link: 1px solid var(--color-grey-light-2); }
+  --line: 1px solid var(--color-grey-light-2); }
 
 * {
   margin: 0;
@@ -214,7 +214,7 @@ body {
 .overview {
   display: flex;
   align-items: center;
-  border-bottom: var(--link); }
+  border-bottom: var(--line); }
   .overview__heading {
     font-size: 2.25rem;
     text-transform: uppercase;
@@ -281,3 +281,41 @@ body {
 
 .paragraph:not(:last-of-type) {
   margin-bottom: 2rem; }
+
+.list {
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: var(--line);
+  border-bottom: var(--line);
+  display: flex;
+  flex-wrap: wrap; }
+  .list__item {
+    flex: 0 0 50%;
+    margin-bottom: 0.7rem; }
+  .list__item::before {
+    content: "";
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.7rem;
+    background-color: var(--color-primary);
+    -webkit-mask: url(../img/chevron-thin-right.svg);
+    -webkit-mask-size: cover;
+    mask: url(../img/chevron-thin-right.svg);
+    mask-size: cover; }
+
+.recommend {
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3);
+  display: flex;
+  align-items: center; }
+  .recommend__count {
+    margin-right: auto; }
+  .recommend__photo {
+    box-sizing: content-box;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-right: -1.5rem; }
