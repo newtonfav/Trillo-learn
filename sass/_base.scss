@@ -18,6 +18,9 @@
   --line: 1px solid var(--color-grey-light-2);
 }
 
+$bp-largest: 75.125em; //1202px
+$bp-large: 67.5625em; //1081px
+
 * {
   margin: 0;
   padding: 0;

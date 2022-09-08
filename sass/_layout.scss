@@ -5,6 +5,12 @@
 
   box-shadow: var(--shadow-dark);
   min-height: 50rem;
+
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 .header {
@@ -20,6 +26,10 @@
 
 .content {
   display: flex;
+
+  @media only screen and (max-width: $bp-large) {
+    flex-direction: column;
+  }
 }
 
 .sidebar {
@@ -43,6 +53,10 @@
   padding: 4.5rem;
   background-color: var(--color-grey-light-1);
   border-bottom: var(--link);
+
+  @media only screen and (max-width: $bp-large) {
+    padding: 3rem;
+  }
 }
 
 .description {
@@ -52,6 +66,11 @@
   padding: 3rem;
 
   box-shadow: var(--shadow-light);
+
+  @media only screen and (max-width: $bp-large) {
+    padding: 2rem;
+    margin-right: 3rem;
+  }
 }
 
 .user-review {
