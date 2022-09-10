@@ -208,12 +208,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center; }
+    @media only screen and (max-width: 32.5em) {
+      .user-nav__notification {
+        top: 1rem;
+        right: 1rem; } }
     @media only screen and (max-width: 23.85em) {
       .user-nav__notification {
         height: 1.5rem;
-        width: 1.5rem;
-        top: 1.2rem;
-        right: 1rem; } }
+        width: 1.5rem; } }
   .user-nav__user-photo {
     height: 3.75rem;
     border-radius: 50%;
@@ -319,7 +321,7 @@ body {
       .overview__heading {
         font-size: 1.8rem;
         padding: 1.25rem 2rem; } }
-    @media only screen and (max-width: 23.85em) {
+    @media only screen and (max-width: 32.5em) {
       .overview__heading {
         font-size: 1.2rem;
         padding: 1rem 1.5rem; } }
@@ -422,11 +424,16 @@ body {
     height: 1rem;
     width: 1rem;
     margin-right: 0.7rem;
-    background-color: var(--color-primary);
-    -webkit-mask: url(../img/chevron-thin-right.svg);
-    -webkit-mask-size: cover;
-    mask: url(../img/chevron-thin-right.svg);
-    mask-size: cover; }
+    background-image: url(../img/chevron-thin-right.svg);
+    background-size: cover; }
+    @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+      .list__item::before {
+        background-color: var(--color-primary);
+        -webkit-mask-image: url(../img/chevron-thin-right.svg);
+        -webkit-mask-size: cover;
+        mask: url(../img/chevron-thin-right.svg);
+        mask-size: cover;
+        background-image: none; } }
 
 .recommend {
   font-size: 1.3rem;

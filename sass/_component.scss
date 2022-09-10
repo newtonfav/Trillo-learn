@@ -127,11 +127,14 @@
     justify-content: center;
     align-items: center;
 
+    @media only screen and (max-width: $bp-smallest) {
+      top: 1rem;
+      right: 1rem;
+    }
+
     @media only screen and (max-width: $bp-smallest-1) {
       height: 1.5rem;
       width: 1.5rem;
-      top: 1.2rem;
-      right: 1rem;
     }
   }
 
@@ -281,7 +284,7 @@
       padding: 1.25rem 2rem;
     }
 
-    @media only screen and (max-width: $bp-smallest-1) {
+    @media only screen and (max-width: $bp-smallest) {
       font-size: 1.2rem;
       padding: 1rem 1.5rem;
     }
@@ -432,15 +435,18 @@
     margin-right: 0.7rem;
 
     //Older Browsers
-    // background-image: url(../img/chevron-thin-right.svg);
-    // background-size: cover;
+    background-image: url(../img/chevron-thin-right.svg);
+    background-size: cover;
 
     //Newer Browsers
-    background-color: var(--color-primary);
-    -webkit-mask: url(../img/chevron-thin-right.svg);
-    -webkit-mask-size: cover;
-    mask: url(../img/chevron-thin-right.svg);
-    mask-size: cover;
+    @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+      background-color: var(--color-primary);
+      -webkit-mask-image: url(../img/chevron-thin-right.svg);
+      -webkit-mask-size: cover;
+      mask: url(../img/chevron-thin-right.svg);
+      mask-size: cover;
+      background-image: none;
+    }
   }
 }
 
